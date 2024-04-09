@@ -1,5 +1,4 @@
 import { createStitches } from "@stitches/react";
-
 import { blue, gray } from "@radix-ui/colors";
 
 const config = createStitches({

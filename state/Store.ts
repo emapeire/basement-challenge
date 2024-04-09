@@ -1,6 +1,7 @@
-import { Product } from "@/product/types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+
+import { Product } from "@/product/types";
 
 export interface ItemEntry {
   product: Product;
@@ -30,6 +31,7 @@ export const useStore = create<Store, [["zustand/persist", {}]]>(
       cartItems: {},
       addToCart: (product: Product) => {
         const cartItems = get().cartItems;
+
         set({
           cartItems: {
             ...cartItems,
@@ -44,10 +46,12 @@ export const useStore = create<Store, [["zustand/persist", {}]]>(
       removeFromCart: (product: Product) => {
         const cartItems = get().cartItems;
         const { [product.id]: _, ...rest } = cartItems;
+
         set({ cartItems: rest });
       },
       incrementQuantity: (product: Product) => {
         const cartItems = get().cartItems;
+
         set({
           cartItems: {
             ...cartItems,
@@ -61,6 +65,7 @@ export const useStore = create<Store, [["zustand/persist", {}]]>(
       },
       decrementQuantity: (product: Product) => {
         const cartItems = get().cartItems;
+
         set({
           cartItems: {
             ...cartItems,
@@ -74,6 +79,7 @@ export const useStore = create<Store, [["zustand/persist", {}]]>(
       },
       setProductSize: (product: Product, size: string) => {
         const cartItems = get().cartItems;
+
         set({
           cartItems: {
             ...cartItems,

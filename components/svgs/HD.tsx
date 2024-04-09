@@ -1,10 +1,10 @@
 const HD = () => {
   return (
     <svg
-      width="43"
+      fill="none"
       height="24"
       viewBox="0 0 43 24"
-      fill="none"
+      width="43"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

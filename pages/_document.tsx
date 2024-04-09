@@ -1,5 +1,6 @@
-import { getCssText } from "@/stitches.config";
 import { Head, Html, Main, NextScript } from "next/document";
+
+import { getCssText } from "@/stitches.config";
 
 export default function Document() {
   return (
@@ -7,22 +8,22 @@ export default function Document() {
       <Head>
         {/* SEO tags */}
         <meta
-          name="description"
           content={`The basement.studio frontend challenge which consists of building a web application following a Figma
 					file that showcases the products of the basement.studio brand.`}
+          name="description"
         />
-        <meta name="theme-color" content="#000000" />
+        <meta content="#000000" name="theme-color" />
         <meta content="#000000" name="msapplication-TileColor" />
         <meta content="Basement Challenge" name="og:title" />
         <meta content={`/assets/og.png`} property="og:image" />
         <meta content="website" property="og:type" />
         {/* Preload fonts as soon as possible */}
         <link
-          rel="preload"
-          href="/fonts/basementgrotesque.woff2"
           as="font"
-          type="font/woff2"
           crossOrigin="anonymous"
+          href="/fonts/basementgrotesque.woff2"
+          rel="preload"
+          type="font/woff2"
         />
         {/* Taken from leerob's website :) */}
         {/* Favicons generated for each device */}
@@ -64,8 +65,8 @@ export default function Document() {
         />
         {/* Stitches SSR */}
         <style
-          id="stitches"
           dangerouslySetInnerHTML={{ __html: getCssText() }}
+          id="stitches"
         />
       </Head>
       <body>

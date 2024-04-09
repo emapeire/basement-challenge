@@ -1,11 +1,10 @@
-import { styled } from "@/stitches.config";
-
 import Image from "next/image";
+import * as MarqueeComponent from "react-fast-marquee";
+
+import { styled } from "@/stitches.config";
 import Asterisk from "@/public/assets/asterisk.png";
 import Asterisk2 from "@/public/assets/asterisk2.png";
-
 import Box from "@/components/commons/Box";
-import * as MarqueeComponent from "react-fast-marquee";
 
 const StyledMarquee = styled(MarqueeComponent.default, {
   borderTop: "1px solid white",
@@ -41,14 +40,11 @@ const Marquee: React.FC = () => {
         }}
       >
         <Image
-          src={Asterisk}
           alt="Three-dimensional black asterisk with a white outline"
           draggable={false}
-          sizes="100vw"
-          style={{
-            width: "100%",
-            height: "auto"
-          }} />
+          layout="responsive"
+          src={Asterisk}
+        />
       </AsteriskWrapper>
       <AsteriskWrapper
         css={{
@@ -57,16 +53,13 @@ const Marquee: React.FC = () => {
         }}
       >
         <Image
-          src={Asterisk2}
           alt="Three-dimensional black asterisk with a white outline"
           draggable={false}
-          sizes="100vw"
-          style={{
-            width: "100%",
-            height: "auto"
-          }} />
+          layout="responsive"
+          src={Asterisk2}
+        />
       </AsteriskWrapper>
-      <StyledMarquee speed={40} gradient={false} loop={0}>
+      <StyledMarquee gradient={false} loop={0} speed={40}>
         A man can&apos;t have enough basement swag — A man can&apos;t have
         enough basement swag — A man can&apos;t have enough basement swag — A
         man can&apos;t have enough basement swag — A man can&apos;t have enough

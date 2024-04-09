@@ -1,10 +1,10 @@
 const Eye = () => {
   return (
     <svg
-      width="84"
+      fill="none"
       height="22"
       viewBox="0 0 84 22"
-      fill="none"
+      width="84"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

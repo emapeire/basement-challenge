@@ -1,7 +1,9 @@
+import React from "react";
+
+import Text from "./commons/Text";
+
 import Box from "@/components/commons/Box";
 import { styled } from "@/stitches.config";
-import React from "react";
-import Text from "./commons/Text";
 
 const StyledHero = styled("div", {
   textAlign: "center",
@@ -29,7 +31,7 @@ const Ellipsis: React.FC<React.PropsWithChildren> = ({ children }) => {
 const Hero: React.FC = () => {
   return (
     <StyledHero>
-      <Text size="14.5vw" lineHeight="low">
+      <Text lineHeight="low" size="14.5vw">
         BASEMENT
       </Text>
       <Box
@@ -41,7 +43,7 @@ const Hero: React.FC = () => {
         }}
       >
         <Ellipsis>EST</Ellipsis>
-        <Text size="14.5vw" lineHeight="low" fill={false}>
+        <Text fill={false} lineHeight="low" size="14.5vw">
           SUPPLY
         </Text>
         <Ellipsis>2K22</Ellipsis>

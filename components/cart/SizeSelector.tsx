@@ -1,7 +1,8 @@
+import * as RadioGroup from "@radix-ui/react-radio-group";
+
 import { Option, Product } from "@/product/types";
 import { useStore } from "@/state/Store";
 import { styled } from "@/stitches.config";
-import * as RadioGroup from "@radix-ui/react-radio-group";
 
 const StyledRoot = styled(RadioGroup.Root, {
   display: "flex",

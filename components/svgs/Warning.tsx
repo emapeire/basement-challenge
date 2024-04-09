@@ -1,10 +1,10 @@
 const Warning = () => {
   return (
     <svg
-      width="25"
+      fill="none"
       height="22"
       viewBox="0 0 25 22"
-      fill="none"
+      width="25"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

@@ -1,16 +1,17 @@
-import { keyframes, styled } from "@/stitches.config";
-
-import { ItemEntry, useCart, useStore } from "@/state/Store";
-
-import { Product } from "@/product/types";
 import * as Dialog from "@radix-ui/react-dialog";
 import Image from "next/image";
+import { useState } from "react";
+
 import Box from "../commons/Box";
 import Text from "../commons/Text";
+import Flex from "../commons/Flex";
+
 import SizeSelector from "./SizeSelector";
 import QuantityControl from "./QuantityControl";
-import Flex from "../commons/Flex";
-import { useState } from "react";
+
+import { keyframes, styled } from "@/stitches.config";
+import { ItemEntry, useCart, useStore } from "@/state/Store";
+import { Product } from "@/product/types";
 import { useEffectOnce } from "@/hooks/useEffectOnce";
 
 const overlayShow = keyframes({
@@ -131,13 +132,11 @@ const ProductEntry: React.FC<{
         }}
       >
         <Image
-          src={product.image}
           alt={product.name}
-          fill
-          sizes="100vw"
-          style={{
-            objectFit: "contain"
-          }} />
+          layout="fill"
+          objectFit="contain"
+          src={product.image}
+        />
       </Box>
       {/* Information span */}
       <Box
@@ -196,9 +195,9 @@ const ProductEntry: React.FC<{
             >
               SIZE:{" "}
               <SizeSelector
+                option={product.options[0]}
                 product={product}
                 size={size}
-                option={product.options[0]}
               />
             </Flex>
             <Text css={{ fontSize: "1rem", "@sm2": { fontSize: "1.5rem" } }}>
@@ -221,6 +220,7 @@ const Cart = () => {
     const ticket = {
       products: Object.keys(items).map((key) => {
         const { product, quantity } = items[key];
+
         return {
           product: product.id,
           quantity,
@@ -238,7 +238,7 @@ const Cart = () => {
   useEffectOnce(() => setMounted(true));
 
   return (
-    <Root open={open} onOpenChange={setOpen} modal={true}>
+    <Root modal={true} open={open} onOpenChange={setOpen}>
       {/*
 				We need to make sure the component has mounted since SSG generates a Cart (0)
 				and the persisted data we get from Zustand could not match since there is more than
@@ -278,7 +278,7 @@ const Cart = () => {
             }}
           >
             <Text size="5.5rem">YOUR </Text>
-            <Text size="5.5rem" fill={false}>
+            <Text fill={false} size="5.5rem">
               CART
             </Text>
           </Box>
@@ -291,7 +291,7 @@ const Cart = () => {
             ) : (
               <Box css={{ display: "flex", justifyContent: "center", gap: 16 }}>
                 <Text size="3rem">IS</Text>
-                <Text size="3rem" fill={false}>
+                <Text fill={false} size="3rem">
                   EMPTY
                 </Text>
               </Box>
@@ -339,8 +339,6 @@ const Cart = () => {
             </Text>
             <Box
               as="button"
-              disabled={Object.keys(items).length === 0}
-              onClick={processCheckout}
               css={{
                 all: "unset",
 
@@ -359,6 +357,8 @@ const Cart = () => {
                     "-1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray",
                 },
               }}
+              disabled={Object.keys(items).length === 0}
+              onClick={processCheckout}
             >
               CHECKOUT
             </Box>

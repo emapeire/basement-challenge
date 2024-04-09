@@ -1,6 +1,7 @@
-import { styled } from "@/stitches.config";
 import { CSSProperties } from "react";
 import React from "react";
+
+import { styled } from "@/stitches.config";
 
 const StyledText = styled("p", {
   display: "inline-block",

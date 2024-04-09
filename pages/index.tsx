@@ -1,13 +1,12 @@
 import Head from "next/head";
+import type { GetStaticProps, NextPage } from "next";
 
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import Products from "@/components/Products";
 import Footer from "@/components/Footer";
-
 import { styled } from "@/stitches.config";
-import type { GetStaticProps, NextPage } from "next";
 import { Product } from "@/product/types";
 
 const Container = styled("div", {

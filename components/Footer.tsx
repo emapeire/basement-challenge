@@ -1,7 +1,7 @@
+import Image from "next/image";
+
 import Box from "@/components/commons/Box";
 import Text from "@/components/commons/Text";
-
-import Image from "next/image";
 import Figure from "@/public/assets/figure.png";
 
 const Footer = () => {
@@ -30,19 +30,16 @@ const Footer = () => {
           }}
         >
           <Image
-            src={Figure}
             alt="Three circles anidated"
             draggable={false}
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-              objectFit: "contain"
-            }} />
+            objectFit="contain"
+            src={Figure}
+          />
         </Box>
         <Text size="14.5vw">WEAR</Text>
       </Box>
       {/* Second line, EVERYDAY */}
-      <Text css={{ marginBottom: 24 }} size="14.5vw" fill={false}>
+      <Text css={{ marginBottom: 24 }} fill={false} size="14.5vw">
         EVERYDAY
       </Text>
     </Box>
