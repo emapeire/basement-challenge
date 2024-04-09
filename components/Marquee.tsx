@@ -1,6 +1,6 @@
 import { styled } from "@/stitches.config";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Asterisk from "@/public/assets/asterisk.png";
 import Asterisk2 from "@/public/assets/asterisk2.png";
 

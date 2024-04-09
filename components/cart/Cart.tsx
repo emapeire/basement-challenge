@@ -4,7 +4,7 @@ import { ItemEntry, useCart, useStore } from "@/state/Store";
 
 import { Product } from "@/product/types";
 import * as Dialog from "@radix-ui/react-dialog";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Box from "../commons/Box";
 import Text from "../commons/Text";
 import SizeSelector from "./SizeSelector";

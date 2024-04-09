@@ -1,7 +1,7 @@
 import Box from "@/components/commons/Box";
 import Text from "@/components/commons/Text";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Figure from "@/public/assets/figure.png";
 
 const Footer = () => {

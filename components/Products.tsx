@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useCart, useStore } from "@/state/Store";
 import { styled } from "@/stitches.config";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Worldwide from "@/public/assets/worldwide.png";
 
 const Card = styled("div", {
