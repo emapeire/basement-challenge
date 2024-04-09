@@ -1,6 +1,6 @@
 import { styled } from "@/stitches.config";
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Asterisk from "@/public/assets/asterisk.png";
 import Asterisk2 from "@/public/assets/asterisk2.png";
 
@@ -42,10 +42,13 @@ const Marquee: React.FC = () => {
       >
         <Image
           src={Asterisk}
-          layout="responsive"
           alt="Three-dimensional black asterisk with a white outline"
           draggable={false}
-        />
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "auto"
+          }} />
       </AsteriskWrapper>
       <AsteriskWrapper
         css={{
@@ -55,10 +58,13 @@ const Marquee: React.FC = () => {
       >
         <Image
           src={Asterisk2}
-          layout="responsive"
           alt="Three-dimensional black asterisk with a white outline"
           draggable={false}
-        />
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "auto"
+          }} />
       </AsteriskWrapper>
       <StyledMarquee speed={40} gradient={false} loop={0}>
         A man can&apos;t have enough basement swag — A man can&apos;t have

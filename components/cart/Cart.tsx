@@ -4,7 +4,7 @@ import { ItemEntry, useCart, useStore } from "@/state/Store";
 
 import { Product } from "@/product/types";
 import * as Dialog from "@radix-ui/react-dialog";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Box from "../commons/Box";
 import Text from "../commons/Text";
 import SizeSelector from "./SizeSelector";
@@ -133,9 +133,11 @@ const ProductEntry: React.FC<{
         <Image
           src={product.image}
           alt={product.name}
-          layout="fill"
-          objectFit="contain"
-        />
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "contain"
+          }} />
       </Box>
       {/* Information span */}
       <Box

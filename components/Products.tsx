@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useCart, useStore } from "@/state/Store";
 import { styled } from "@/stitches.config";
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Worldwide from "@/public/assets/worldwide.png";
 
 const Card = styled("div", {
@@ -42,10 +42,12 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
         <Image
           src={product.image}
           alt={`${product.name} product image`}
-          objectFit="contain"
-          layout="fill"
           draggable={false}
-        />
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "contain"
+          }} />
       </Box>
       {/* Product name & price */}
       <Box
@@ -73,7 +75,10 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
             src={Worldwide}
             alt="Add to card text with a globe behind"
             draggable={false}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </Box>
       )}
     </Card>

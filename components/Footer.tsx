@@ -1,7 +1,7 @@
 import Box from "@/components/commons/Box";
 import Text from "@/components/commons/Text";
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Figure from "@/public/assets/figure.png";
 
 const Footer = () => {
@@ -32,9 +32,12 @@ const Footer = () => {
           <Image
             src={Figure}
             alt="Three circles anidated"
-            objectFit="contain"
             draggable={false}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+              objectFit: "contain"
+            }} />
         </Box>
         <Text size="14.5vw">WEAR</Text>
       </Box>
